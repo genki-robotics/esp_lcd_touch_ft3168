@@ -1,0 +1,25 @@
+name: ESP-IDF Clang check
+
+on:
+  pull_request:
+    paths:
+      - .github/workflows/clang.yaml
+
+  # Enable manual triggering of the workflow
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v4
+
+    - name: Run clang-format
+      if: always()
+      uses: jidicula/clang-format-action@v4.15.0
+      with:
+        clang-format-version: '17'
+        check-path: '.'
+        fallback-style: 'google'
