@@ -1,0 +1,8 @@
+version: "0.0.1"
+description: ESP LCD Touch FT3168
+url: https://github.com/genki-robotics/esp_lcd_touch_ft3168
+dependencies:
+  idf: ">=4.4.2"
+  esp_lcd_touch:
+    version: "^1.0.4"
+    public: true
